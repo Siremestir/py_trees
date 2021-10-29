@@ -1,5 +1,5 @@
 class Tree:
-    def __init__(self, knot):
+    def __init__(self, knot) -> None:
         self.root = knot
     
     def __str__(self) -> str:
@@ -7,7 +7,7 @@ class Tree:
 
 
 class Knot:
-    def __init__(self, label, children=[], parent=None):
+    def __init__(self, label, children=[], parent=None) -> None:
         self.label = label
         self.children=children
         self.parent=parent
@@ -15,12 +15,21 @@ class Knot:
     def __str__(self) -> str:
         return self.label
     
-    def is_leaf(self):
+    def is_leaf(self) -> bool:
         """Returns True if the knot doesn't have any children
         Returns False otherwise
         """
         return self.children == []
 
-    def add_child(self, child):
+    def add_child(self, child) -> None:
         """Adds a knot to the children list
         """
+        self.children.append(child)
+
+    def print_children(self) -> None:
+        """Displays the children in a readable list
+        """
+        display = []
+        for child in self.children:
+            display.append(str(child))
+        print(display)
