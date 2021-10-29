@@ -22,3 +22,10 @@ family_tree.reset_root(me)
 
 print(family_tree)
 family_tree.display(family_tree.root)
+
+uncle = trees.Knot("Manou")
+mom.add_sibling(uncle)
+
+family_tree.reset_root(family_tree.root)
+print(family_tree)
+family_tree.display(family_tree.root)

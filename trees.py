@@ -39,6 +39,7 @@ class Knot:
         self.label = label
         self.children=[]
         self.parent=None
+        self.siblings=False
 
     def __str__(self) -> str:
         return self.label
@@ -62,3 +63,15 @@ class Knot:
         for child in self.children:
             display.append(str(child))
         print(display)
+    
+    def add_sibling(self, sibling) -> None:
+        """Adds a sibling to self.
+        If self has no parent, creates a ghost parent"""
+        self.siblings = True
+        sibling.siblings = True
+        if self.parent != None:
+            self.parent.add_child(sibling)
+        else:
+            parent = Knot("(abstract root)")
+            parent.add_child(self)
+            parent.add_child(sibling)
