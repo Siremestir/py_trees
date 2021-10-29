@@ -8,6 +8,7 @@ my_child = trees.Knot("My child")
 me.add_child(my_child)
 print(me.children)
 me.print_children()
+print(my_child.parent)
 
 family_tree = trees.Tree(me)
 print(family_tree)

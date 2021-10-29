@@ -22,9 +22,10 @@ class Knot:
         return self.children == []
 
     def add_child(self, child) -> None:
-        """Adds a knot to the children list
+        """Adds a knot to the children list and sets self to its parent
         """
         self.children.append(child)
+        child.parent = self
 
     def print_children(self) -> None:
         """Displays the children in a readable list
