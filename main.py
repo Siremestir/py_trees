@@ -21,3 +21,4 @@ family_tree = trees.Tree(me)
 family_tree.reset_root(me)
 
 print(family_tree)
+family_tree.display(family_tree.root)

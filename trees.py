@@ -25,6 +25,13 @@ class Tree:
             count += 1
             count += self.count_knots(child)
         return count
+    
+    def display(self, knot, spacing=0) -> None:
+        """Displays the whole tree with the knot given as the root
+        """
+        print(" "*spacing+ str(knot))
+        for child in knot.children:
+            self.display(child, spacing+1)
 
 
 class Knot:
