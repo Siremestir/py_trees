@@ -4,13 +4,22 @@ class Tree:
     
     def __str__(self) -> str:
         return str(self.root) #temporary
+    
+    def reset_root(self, knot) -> None:
+        """Sets the root of the tree to the highest parent found from the
+        given knot
+        """
+        if knot.parent == None:
+            self.root = knot
+        else:
+            self.reset_root(knot.parent)
 
 
 class Knot:
-    def __init__(self, label, children=[], parent=None) -> None:
+    def __init__(self, label) -> None:
         self.label = label
-        self.children=children
-        self.parent=parent
+        self.children=[]
+        self.parent=None
 
     def __str__(self) -> str:
         return self.label

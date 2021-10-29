@@ -10,5 +10,14 @@ print(me.children)
 me.print_children()
 print(my_child.parent)
 
+mom = trees.Knot("Mom")
+bro = trees.Knot("Loic")
+mom.add_child(me)
+mom.add_child(bro)
+mom.print_children()
+
 family_tree = trees.Tree(me)
+
+family_tree.reset_root(me)
+
 print(family_tree)
