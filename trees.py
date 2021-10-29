@@ -75,3 +75,23 @@ class Knot:
             parent = Knot("(abstract root)")
             parent.add_child(self)
             parent.add_child(sibling)
+    
+    def move_left(self) -> None:
+        """Moves self left in the tree. Makes it the next sibling to its parent.
+        If self has no parent, an abstract one will be created."""
+        pass
+
+    def move_right(self) -> None:
+        """Moves self right in the tree. Makes it the first child to its older sibling.
+        If self has no older sibling, an abstract one will be created."""
+        pass
+
+    def move_up(self) -> None:
+        """Moves self up in the tree. Makes it the older sibling to its older sibling.
+        If self has no older sibling, an abstract one will be created."""
+        pass
+
+    def move_down(self) -> None:
+        """Moves self down in the tree. Makes it the younger sibling to its younger sibling.
+        If self has no younger sibling, an abstract one will be created."""
+        pass

@@ -29,3 +29,17 @@ mom.add_sibling(uncle)
 family_tree.reset_root(family_tree.root)
 print(family_tree)
 family_tree.display(family_tree.root)
+
+#TODO
+
+me.move_left()
+family_tree.display(family_tree.root)
+
+me.move_right()
+family_tree.display(family_tree.root)
+
+me.move_up()
+family_tree.display(family_tree.root)
+
+me.move_down()
+family_tree.display(family_tree.root)
