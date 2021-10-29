@@ -3,7 +3,9 @@ class Tree:
         self.root = knot
     
     def __str__(self) -> str:
-        return str(self.root) #temporary
+        to_display = "Tree from " + str(self.root)
+        to_display = to_display + ": " + str(self.count_knots(self.root)) + " knots"
+        return to_display
     
     def reset_root(self, knot) -> None:
         """Sets the root of the tree to the highest parent found from the
@@ -13,6 +15,16 @@ class Tree:
             self.root = knot
         else:
             self.reset_root(knot.parent)
+    
+    def count_knots(self, knot) -> int:
+        """Counts how many knots are in the tree with the given knot
+        as the root
+        """
+        count=1
+        for child in knot.children:
+            count += 1
+            count += self.count_knots(child)
+        return count
 
 
 class Knot:
